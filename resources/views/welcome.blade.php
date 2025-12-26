@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ asset('img/logo.svg') }}" type="image/x-icon">
 
         <title>{{ config('app.name', 'Hay Leads') }}</title>
         <!-- Styles / Scripts -->
@@ -14,28 +15,88 @@
             </style>
         @endif
     </head>
-    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex px-4 items-center min-h-screen flex-col">
-        <header class="w-full h-46 text-sm not-has-[nav]:hidden">
-            <nav class="flex justify-between items-center">
-                <img src="{{ asset('img/logo.svg') }}" alt="Logotipo Hay Leads" class="w-17 h-14.25 lg:w-63 lg:h-56">
-                <a href="#" class="bg-[#83d040] w-29 lg:w-56 text-center font-black uppercase lg:p-4 rounded-4xl lg:rounded-full text-[10px] lg:text-lg">Agenda tu Demo</a>
+    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12">
+        <header class="w-full max-w- lg:h-46 md:h-90 text-sm not-has-[nav]:hidden pr-12">
+            <nav class="flex justify-center md:justify-between gap-4 items-center">
+                <img src="{{ asset('img/logo.svg') }}" alt="Logotipo Hay Leads" class="w-63 h-56">
+                <a href="#" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg">Agenda tu Demo</a>
             </nav>
         </header>
-        <main class="w-full lg:max-h-115 grow flex flex-col items-center">
-            <div class="flex flex-col lg:flex-row gap-4 items-center justify-between w-full h-96 pl-4">
-                <div class="w-full">
-                    <h1 class="w-full font-black text-left text-5xl text-[#83d040]">Más leads Calificados <br> Más ventas para tu desarrollo. </h1>
-                    <p class="w-full mt-4 text-left text-white text-lg lg:text-xl">No generamos leads por volumen.
+        <main class="w-full flex flex-col items-center justify-center pt-12 lg:pt-0">
+            <div class="flex flex-col-reverse lg:flex-row gap-4 items-center justify-center w-full lg:max-w-10/12 pl-4">
+                <div class="w-10/12 flex flex-col items-center justify-center gap-4 lg:gap-8">
+                    <h1 class="w-full font-black text-left text-6xl text-[#83d040]">Más leads Calificados <br> Más ventas para tu desarrollo. </h1>
+                    <p class="w-full mt-4 text-left text-white text-lg lg:text-2xl">No generamos leads por volumen.
                     Creamos un flujo constante de prospectos que sí pueden comprar y que tu equipo de ventas sí va a poder cerrar.
                     Nos enfocamos en alcanzar tus objetivos de ventas y no en generar más leads</p>
                 </div>
-                <div class="text-center w-full">
-                    <img src="{{ asset('img/hero.png') }}" class="w-90 rounded-3xl h-90" alt="">
+                <div class="text-center w-10/12 flex justify-center items-center">
+                    <img src="{{ asset('img/hero.png') }}" class="w-full lg:w-90 rounded-3xl h-90" alt="">
                 </div>
             </div>
-            <div class="w-full bg-[#83d040] h-4 flex items-center justify-center mt-4 lg:h-12">
-                <a href="#" class="text-black font-bold text-lg text-center uppercase sticky-bottom">Agenda tu demo</a>
+            <div class="fixed bottom-0 left-0 w-full bg-[#83d040] h-12 flex items-center justify-center z-50">
+                <a href="#" class="text-black font-bold text-lg text-center uppercase">
+                    Agenda tu demo
+                </a>
             </div>
         </main>
+        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center mt-12 py-12">
+            <div class="w-full mb-4">
+                <h2 class="font-black text-center text-4xl w-full text-[#9795fa]">No necesitas más volumen. <br> Necesitas Leads que puedan comprar.</h2>
+            </div>
+            <div class="w-full flex justify-center mb-8">
+                <p class="text-center text-2xl w-8/12">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
+            </div>
+            <div class="flex flex-col md:flex-row w-full gap-12 justify-center items-center px-8 md:px-48">
+                <div class="col-md-6 flex items-start gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-xl w-full">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</p>
+                </div>
+                <div class="col-md-6 flex items-start gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-xl w-full">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row w-full gap-12 justify-center items-center px-8 md:px-48 mt-8">
+                <div class="col-md-6 flex items-start gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-xl w-full">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</p>
+                </div>
+                <div class="col-md-6 flex items-start gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-xl w-full">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto</p>
+                </div>
+            </div>
+        </section>
+        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center py-12">
+            <h2 class="font-black text-center text-4xl w-full text-[#83d040]">Transforma tu inversión publicitaria en Ventas</h2>
+            <p class="text-center text-2xl w-8/12 mt-4">Nuestro enfoque prioriza los prospectos con intención de compra real, seguimiento claro y decisiones basadas en datos.</p>
+            <div class="w-8/12 mx-auto mt-20 flex flex-col gap-20 md:flex-row justify-between items-center">
+                <div class="bg-[#9795fa] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                    <img src="{{ asset('img/etiqueta1.svg') }}" alt="Etiqueta Más Calidad" class="w-40 h-40 absolute -right-16 -top-20 rotate-36">
+                    <h6 class="font-black text-lg">Más Calidad</h6>
+                    <p class="text-lg">Seguimos cada lead desde el primer click hasta la venta. 
+                        <br>
+                        <br>
+                    Si no puede comprar no entra al funnel</p>
+                </div>
+                <div class="bg-[#83d040] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                    <img src="{{ asset('img/etiqueta2.svg') }}" alt="Etiqueta Más Control" class="w-64 h-64 absolute -right-30 -top-36 rotate-36">
+                    <h6 class="font-black text-lg">Más Control</h6>
+                    <p class="text-lg">Dashboards claros con lo que te importa:
+                        <br>
+                        <br>
+                    Leads, citas, cierres y retorno de la inversión</p>
+                </div>
+                <div class="bg-[#9795fa] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                    <img src="{{ asset('img/etiqueta3.svg') }}" alt="Etiqueta Más Ventas" class="w-30 h-30 absolute -right-20 -top-20 rotate-36">
+                    <h6 class="font-black text-lg">Más Ventas</h6>
+                    <p class="">Trabajamos de la mano con tu equipo de ventas para optimizar:
+                        <br>
+                        <br>
+                    Mensajes, tiempo de respuesta y seguimiento en tiempo real</p>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
