@@ -19,7 +19,7 @@
         <header class="w-full max-w- lg:h-46 md:h-90 text-sm not-has-[nav]:hidden pr-12">
             <nav class="flex justify-center md:justify-between gap-4 items-center">
                 <img src="{{ asset('img/logo.svg') }}" alt="Logotipo Hay Leads" class="w-63 h-56">
-                <a href="#" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg">Agenda tu Demo</a>
+                <a href="#contacto" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg hover:scale-125">Agenda tu Demo</a>
             </nav>
         </header>
         <main class="w-full flex flex-col items-center justify-center pt-12 lg:pt-0">
@@ -34,8 +34,8 @@
                     <img src="{{ asset('img/hero.png') }}" class="w-full lg:w-90 rounded-3xl h-90" alt="">
                 </div>
             </div>
-            <div class="fixed bottom-0 left-0 w-full bg-[#83d040] h-12 flex items-center justify-center z-50">
-                <a href="#" class="text-black font-bold text-lg text-center uppercase">
+            <div id="agenda_demo" class="fixed bottom-0 left-0 w-full bg-[#83d040] h-12 flex items-center justify-center z-50 hover:cursor-pointer hover:scale-125">
+                <a href="#contacto" class="text-black font-bold text-lg text-center uppercase w-full">
                     Agenda tu demo
                 </a>
             </div>
@@ -147,8 +147,10 @@
       
                     <!-- Nombre -->
                     <div>
-                        <label class="block text-sm -mb-2 text-white">Nombre</label>
+                        <label for="name" class="block text-sm -mb-2 text-white">Nombre</label>
                         <input
+                        name="name"
+                        id="name"
                         type="text"
                         class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
                         />
@@ -156,8 +158,10 @@
 
                     <!-- Teléfono -->
                     <div>
-                        <label class="block text-sm -mb-2 text-white">Teléfono</label>
+                        <label for="telephone" class="block text-sm -mb-2 text-white">Teléfono</label>
                         <input
+                        name="telephone"
+                        id="telephone"
                         type="tel"
                         class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
                         />
@@ -165,8 +169,10 @@
 
                     <!-- Correo -->
                     <div>
-                        <label class="block text-sm -mb-2 text-white">Correo</label>
+                        <label label="mail" class="block text-sm -mb-2 text-white">Correo</label>
                         <input
+                        name="mail"
+                        id="mail"
                         type="email"
                         class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
                         />
@@ -174,8 +180,10 @@
 
                     <!-- Tipo de proyecto -->
                     <div>
-                        <label class="block text-sm -mb-2 text-white">Tipo de proyecto</label>
+                        <label for="project_type" class="block text-sm -mb-2 text-white">Tipo de proyecto</label>
                         <input
+                        name="project_type"
+                        id="project_type"
                         type="text"
                         class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
                         />
@@ -183,17 +191,42 @@
 
                     <!-- Comentarios (full width) -->
                     <div class="md:col-span-2">
-                        <label class="block text-sm -mb-2 text-white">Comentarios</label>
+                        <label for="comments" class="block text-sm -mb-2 text-white">Comentarios</label>
                         <textarea
+                        name="comments"
+                        id="comments"
                         rows="2"
                         class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] resize-none py-1 text-white"
                         ></textarea>
                     </div>
                 </div>
                 <div class="flex justify-center items-center w-full mt-4">
-                    <input type="submit" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg " value="Agenda tu Demo"/>
+                    <input type="submit" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg hover:cursor-pointer hover:scale-125" value="Agenda tu Demo"/>
                 </div>
             </form>
         </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const banner = document.getElementById("agenda_demo");
+                const contacto = document.getElementById("contacto");
+
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            banner.classList.add("opacity-0", "pointer-events-none");
+                        } else {
+                            banner.classList.remove("opacity-0", "pointer-events-none");
+                        }
+                    },
+                    {
+                        threshold: 0.2 // cuando el 20% del formulario es visible
+                    }
+                );
+
+                observer.observe(contacto);
+            });
+        </script>
+
     </body>
 </html>
