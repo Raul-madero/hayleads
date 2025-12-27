@@ -72,7 +72,7 @@
             <h2 class="font-black text-center text-4xl w-full text-[#83d040]">Transforma tu inversión publicitaria en Ventas</h2>
             <p class="text-center text-2xl w-8/12 mt-4">Nuestro enfoque prioriza los prospectos con intención de compra real, seguimiento claro y decisiones basadas en datos.</p>
             <div class="w-8/12 mx-auto mt-20 flex flex-col gap-20 md:flex-row justify-between items-center">
-                <div class="bg-[#9795fa] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                <div class="bg-[#9795fa] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
                     <img src="{{ asset('img/etiqueta1.svg') }}" alt="Etiqueta Más Calidad" class="w-40 h-40 absolute -right-16 -top-20 rotate-36">
                     <h6 class="font-black text-lg">Más Calidad</h6>
                     <p class="text-lg">Seguimos cada lead desde el primer click hasta la venta. 
@@ -80,16 +80,16 @@
                         <br>
                     Si no puede comprar no entra al funnel</p>
                 </div>
-                <div class="bg-[#83d040] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
-                    <img src="{{ asset('img/etiqueta2.svg') }}" alt="Etiqueta Más Control" class="w-64 h-64 absolute -right-30 -top-36 rotate-36">
+                <div class="bg-[#83d040] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                    <img src="{{ asset('img/etiqueta2.svg') }}" alt="Etiqueta Más Control" class="w-64 h-64 absolute -right-30 -top-36 md:-right-15 rotate-36 lg:-right-23">
                     <h6 class="font-black text-lg">Más Control</h6>
                     <p class="text-lg">Dashboards claros con lo que te importa:
                         <br>
                         <br>
                     Leads, citas, cierres y retorno de la inversión</p>
                 </div>
-                <div class="bg-[#9795fa] w-10/12 md:w-5/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
-                    <img src="{{ asset('img/etiqueta3.svg') }}" alt="Etiqueta Más Ventas" class="w-30 h-30 absolute -right-20 -top-20 rotate-36">
+                <div class="bg-[#9795fa] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
+                    <img src="{{ asset('img/etiqueta3.svg') }}" alt="Etiqueta Más Ventas" class="w-30 h-30 md:w-60 md:h-60 absolute -right-20 -top-20 md:-right-15 md:-top-30 lg:-right-25 rotate-36">
                     <h6 class="font-black text-lg">Más Ventas</h6>
                     <p class="">Trabajamos de la mano con tu equipo de ventas para optimizar:
                         <br>
@@ -97,6 +97,44 @@
                     Mensajes, tiempo de respuesta y seguimiento en tiempo real</p>
                 </div>
             </div>
+        </section>
+        <section class="w-10/12 mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-0 justify-center py-12">
+            <div class="w-1/2 flex justify-center items-center flex-col">
+                <h2 class="font-black text-center text-4xl w-full text-[#83d040]">Nuestro sistema en 3 pasos</h2>
+                <div class="flex items-start gap-4 mt-8">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-l font-light w-full text-white"> <span class="text-xl font-bold"> Atraemos compradores con capacidad</span>
+                        <br>
+                    Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos. </p>
+                </div>
+                <div class="flex items-start gap-4 mt-8">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-l w-full text-white font-light"> <span class="text-xl font-bold">Cualificamos y filtramos con IA</span>
+                        <br>
+                    Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios. </p>
+                </div>
+                <div class="flex items-start gap-4 mt-8">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
+                    <p class="text-l w-full text-white font-light"><span class="text-xl font-bold">Medimos, optimizamos y escalamos </span>
+                        <br>
+                    Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más. </p>
+                </div>
+            </div>
+            <div class="w-1/2 grid grid-rows-4 grid-cols-3">
+                <h6 class="font-black text-[#83d040] justify-self-center self-end text-center">Ads</h6>
+                <div></div>
+                <h6 class="font-black text-[#83d040] justify-self-center self-end text-center">Leads Calificados</h6>
+                <img src="{{ asset('img/ads.svg') }}" alt="Ads Hay Leads" class="w-30 h-30 justify-self-end self-center">
+                <img src="{{ asset('img/flecha.svg') }}" alt="Flecha a la derecha" class="w-10 h-10 self-center justify-self-start">
+                <img src="{{ asset('img/leads.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
+                <h6 class="font-black text-[#83d040] justify-self-center self-end text-center">Citas</h6>
+                <div></div>
+                <h6 class="font-black text-[#83d040] justify-self-center self-end text-center">Ventas</h6>
+                <img src="{{ asset('img/citas.svg') }}" alt="Flecha a la derecha" class="w-30 h-30 self-center justify-self-end">
+                <img src="{{ asset('img/flecha.svg') }}" alt="Leads Calificados Hay Leads" class="w-10 h-10 self-center justify-self-start">
+                <img src="{{ asset('img/ventas.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
+            </div>
+                
         </section>
     </body>
 </html>
