@@ -134,7 +134,66 @@
                 <img src="{{ asset('img/flecha.svg') }}" alt="Leads Calificados Hay Leads" class="w-10 h-10 self-center justify-self-start">
                 <img src="{{ asset('img/ventas.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
             </div>
-                
+        </section>
+        <section id="contacto" class="w-10/12 mx-auto flex flex-col items-center gap-8 lg:gap-0 justify-center py-12">
+            <div class="">
+                <h2 class="font-black text-center text-4xl w-full text-[#83d040]">Si tus ventas dependen de leads, dependen de nosotros</h2>
+                <p class="text-white text-center text-xl mt-12 w-8/12 mx-auto">Descubre cómo llenar tu pipeline con citas reales, reducir el desgaste de tu equipo de ventas y empezar a cerrar más con una estrategia digital integral</p>
+                <p class="text-white text-center text-xl mt-14 w-8/12 mx-auto">Déjanos tus datos y comienza a vender más</p>
+            </div>
+            <form action="" class="flex flex-col gap-4 p-10 w-10/12 mx-auto my-8">
+                @csrf
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+      
+                    <!-- Nombre -->
+                    <div>
+                        <label class="block text-sm -mb-2 text-white">Nombre</label>
+                        <input
+                        type="text"
+                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
+                        />
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div>
+                        <label class="block text-sm -mb-2 text-white">Teléfono</label>
+                        <input
+                        type="tel"
+                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
+                        />
+                    </div>
+
+                    <!-- Correo -->
+                    <div>
+                        <label class="block text-sm -mb-2 text-white">Correo</label>
+                        <input
+                        type="email"
+                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
+                        />
+                    </div>
+
+                    <!-- Tipo de proyecto -->
+                    <div>
+                        <label class="block text-sm -mb-2 text-white">Tipo de proyecto</label>
+                        <input
+                        type="text"
+                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
+                        />
+                    </div>
+
+                    <!-- Comentarios (full width) -->
+                    <div class="md:col-span-2">
+                        <label class="block text-sm -mb-2 text-white">Comentarios</label>
+                        <textarea
+                        rows="2"
+                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] resize-none py-1 text-white"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center w-full mt-4">
+                    <input type="submit" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg " value="Agenda tu Demo"/>
+                </div>
+            </form>
         </section>
     </body>
 </html>
