@@ -15,7 +15,7 @@
             </style>
         @endif
     </head>
-    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12">
+    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12 overflow-x-clip">
         <header class="w-full text-sm not-has-[nav]:hidden pr-12">
             <nav class="flex justify-around lg:justify-between gap-4 items-center lg:w-9/12 lg:mx-auto">
                 <img src="{{ asset('img/logo.svg') }}" alt="Logotipo Hay Leads" class="md:w-56 md:h-40 w-40 h-36">
@@ -31,7 +31,7 @@
                     Nos enfocamos en alcanzar tus objetivos de ventas y no en generar más leads</p>
                 </div>
                 <div class="text-center w-10/12 flex justify-center items-center">
-                    <img src="{{ asset('img/hero.png') }}" class="w-full lg:w-90 rounded-3xl" alt="">
+                    <img src="{{ asset('img/hero.png') }}" class="w-full h-40 md:h-full lg:w-90 rounded-3xl" alt="Sistemas Computacionales Hay Leads">
                 </div>
             </div>
             <div id="agenda_demo" class="fixed bottom-0 left-0 w-full bg-[#83d040] h-12 flex items-center justify-center z-50 hover:cursor-pointer hover:scale-125">
@@ -204,27 +204,27 @@
                     <input type="submit" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg hover:cursor-pointer hover:scale-125" value="Agenda tu Demo"/>
                 </div>
             </form> --}}
+            <div class="w-ful flex bg-black text-white text-center p-4">
+            <iframe
+                class="w-full min-h-146.25"
+                src="https://api.leadconnectorhq.com/widget/form/wjx6D6c2C7d1h3UanacQ"
+                {{-- style="width:100%;height:100%;border:none;border-radius:3px" --}}
+                id="inline-wjx6D6c2C7d1h3UanacQ" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Hay Leads"
+                data-height="585"
+                data-layout-iframe-id="inline-wjx6D6c2C7d1h3UanacQ"
+                data-form-id="wjx6D6c2C7d1h3UanacQ"
+                title="Hay Leads"
+            >
+    </iframe>
         </section>
-        <div class="w-ful flex bg-black text-white text-center p-4">
-        <iframe
-            class="w-full min-h-146.25"
-            src="https://api.leadconnectorhq.com/widget/form/wjx6D6c2C7d1h3UanacQ"
-            {{-- style="width:100%;height:100%;border:none;border-radius:3px" --}}
-            id="inline-wjx6D6c2C7d1h3UanacQ" 
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Hay Leads"
-            data-height="585"
-            data-layout-iframe-id="inline-wjx6D6c2C7d1h3UanacQ"
-            data-form-id="wjx6D6c2C7d1h3UanacQ"
-            title="Hay Leads"
-        >
-</iframe>
         </div>
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
