@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="w-full" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
             </style>
         @endif
     </head>
-    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12 overflow-x-clip">
+    <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12">
         <header class="w-full text-sm not-has-[nav]:hidden pr-12">
             <nav class="flex justify-around lg:justify-between gap-4 items-center lg:w-9/12 lg:mx-auto">
                 <img src="{{ asset('img/logo.svg') }}" alt="Logotipo Hay Leads" class="md:w-56 md:h-40 w-40 h-36">
@@ -40,13 +40,13 @@
         <!-- Seccion Principal -->
         <main class="w-full flex flex-col items-center justify-center">
             <div class="flex flex-col md:flex-row gap-4 items-center justify-center w-full md:max-w-10/12 pl-4">
-                <div class="w-10/12 flex flex-col items-center justify-center gap-4 lg:gap-8">
+                <div class="w-full flex flex-col items-center justify-center gap-4 lg:gap-8">
                     <h1 class="w-full font-black text-left text-xl md:text-2xl lg:text-4xl text-[#83d040]">Más leads Calificados <br> Más ventas para tu desarrollo. </h1>
                     <p class="w-full mt-4 text-left text-white text-sm md:text-xl lg:text-2xl">No generamos leads por volumen.
                     Creamos un flujo constante de prospectos que sí pueden comprar y que tu equipo de ventas sí va a poder cerrar.
                     Nos enfocamos en alcanzar tus objetivos de ventas y no en generar más leads</p>
                 </div>
-                <div class="text-center w-10/12 flex justify-center items-center">
+                <div class="text-center w-full flex justify-center items-center">
                     <img src="{{ asset('img/hero.png') }}" class="w-full h-40 md:h-full lg:w-90 rounded-3xl" alt="Sistemas Computacionales Hay Leads">
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#9795fa]">No necesitas más volumen. <br> Necesitas Leads que puedan comprar.</h2>
             </div>
             <div class="w-full flex justify-center mb-8">
-                <p class="text-center text-sm md:text-xl lg:text-2xl w-12/12 px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
+                <p class="text-center text-sm md:text-xl lg:text-2xl w-full px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
             </div>
             <div class="flex w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48">
                 <div
@@ -141,10 +141,10 @@
             </div>
         </section>
         <!-- Seccion Inversion -->
-        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center py-12">
+        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center py-12 overflow-x-hidden">
             <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">Transforma tu inversión publicitaria en Ventas</h2>
-            <p class="text-center text-sm md:text-xl lg:text-2xl w-12/12 px-4 mt-4">Nuestro enfoque prioriza los prospectos con intención de compra real, seguimiento claro y decisiones basadas en datos.</p>
-            <div class="w-11/12 mx-auto mt-20 relative">
+            <p class="text-center text-sm md:text-xl lg:text-2xl w-full px-4 mt-4">Nuestro enfoque prioriza los prospectos con intención de compra real, seguimiento claro y decisiones basadas en datos.</p>
+            <div class="w-full mx-auto mt-20 relative px-10">
                 
                 <!-- TRACK -->
                 <div
@@ -153,8 +153,8 @@
                 >
 
                     <!-- ITEM 1 Mas Calidad-->
-                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
-                        <div class="relative w-10/12 flex justify-center">
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center px-8">
+                        <div class="relative w-full flex justify-center">
 
                             <!-- CARD -->
                             <div class="bg-[#9795fa] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
@@ -177,8 +177,8 @@
                     </div>
 
                     <!-- ITEM 2 Mas Control-->
-                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
-                        <div class="relative w-10/12 flex justify-center">
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center px-8">
+                        <div class="relative w-full flex justify-center">
 
                             <!-- CARD -->
                             <div class="bg-[#83d040] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
@@ -201,8 +201,8 @@
                     </div>
 
                     <!-- ITEM 3 MAs Ventas-->
-                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
-                        <div class="relative w-10/12 flex justify-center">
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center px-8">
+                        <div class="relative w-full flex justify-center">
 
                             <!-- CARD -->
                             <div class="bg-[#9795fa] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
@@ -234,7 +234,7 @@
         </section>
         <!-- Seccion 3 pasos -->
         <section class="w-full px-4 flex md:flex-row items-center gap-8 lg:gap-0 justify-center py-12">
-            <div class="w-7/12 flex justify-center items-center flex-col">
+            <div class="w-full flex justify-center items-center flex-col">
                 <!-- TÍTULO -->
                 <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">
                     Nuestro sistema en 3 pasos
@@ -275,7 +275,7 @@
                 </div>
             </div>
 
-            <div class="w-3/12 md:grid-rows-4 md:grid-cols-3 hidden md:grid">
+            <div class="w-full md:grid-rows-4 md:grid-cols-3 hidden md:grid">
                 <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Ads</h6>
                 <div></div>
                 <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Leads Calificados</h6>
@@ -292,7 +292,7 @@
         </section>
         <section
   id="contacto"
-  class="w-10/12 mx-auto flex flex-col items-center gap-12 mb-12 min-h-screen"
+  class="w-full mx-auto flex flex-col items-center gap-12 mb-12 min-h-screen"
 >
   <!-- TEXTO -->
   <div class="max-w-5xl">

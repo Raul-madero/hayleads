@@ -1,63 +1,44 @@
-// resources/js/hayleads.js
-
 function isMobile() {
-  return window.innerWidth < 768;
+  return window.matchMedia("(max-width: 767px)").matches;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  /**
-   * =========================================
-   * 1) "Ver más" de viñetas (mobile)
-   * =========================================
-   * En tu HTML usas: onclick="toggleItem(this)"
-   * Entonces debe vivir en window.
-   */
+
+  /* =========================
+   * 1) Toggle viñetas (mobile)
+   * ========================= */
   window.toggleItem = function (element) {
     if (!isMobile()) return;
 
-    const content = element?.querySelector(".mobile-content");
+    const content = element.querySelector(".mobile-content");
     if (content) content.classList.toggle("hidden");
   };
 
-  /**
-   * =========================================
-   * 2) Sistema 3 pasos (mobile)
-   * =========================================
-   * En tu HTML usas: onclick="showStep(1)"
-   */
+  /* =========================
+   * 2) Sistema 3 pasos
+   * ========================= */
   window.showStep = function (step) {
     if (!isMobile()) return;
 
-    document.querySelectorAll(".step").forEach((el) => el.classList.add("hidden"));
-    document.querySelectorAll(".step-btn").forEach((btn) => btn.classList.remove("active"));
+    document.querySelectorAll(".step").forEach(el => el.classList.add("hidden"));
+    document.querySelectorAll(".step-btn").forEach(btn => btn.classList.remove("active"));
 
     document.querySelector(`.step[data-step="${step}"]`)?.classList.remove("hidden");
     document.querySelectorAll(".step-btn")[step - 1]?.classList.add("active");
   };
 
-  // Default: mostrar paso 1 en mobile
   if (isMobile()) {
     window.showStep(1);
-  } else {
-    // En desktop: mostrar todos (tu HTML ya tiene md:flex, pero esto lo refuerza)
-    document.querySelectorAll(".step").forEach((el) => el.classList.remove("hidden"));
   }
 
-  /**
-   * =========================================
-   * 3) Carrusel (mobile)
-   * =========================================
-   * En tu HTML usas: onclick="prevSlide()" / onclick="nextSlide()"
-   */
+  /* =========================
+   * 3) Carrusel mobile
+   * ========================= */
   const track = document.getElementById("carouselTrack");
   let index = 0;
-  let timerId = null;
+  let timer = null;
 
-  function slidesCount() {
-    return track ? track.children.length : 0;
-  }
-
-  window.updateCarousel = function () {
+  function updateCarousel() {
     if (!track) return;
 
     if (!isMobile()) {
@@ -65,75 +46,49 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     track.style.transform = `translateX(-${index * 100}%)`;
-  };
+  }
 
   window.nextSlide = function () {
     if (!track) return;
-    const total = slidesCount();
-    if (!total) return;
-
-    index = (index + 1) % total;
-    window.updateCarousel();
+    index = (index + 1) % track.children.length;
+    updateCarousel();
   };
 
   window.prevSlide = function () {
     if (!track) return;
-    const total = slidesCount();
-    if (!total) return;
-
-    index = (index - 1 + total) % total;
-    window.updateCarousel();
+    index = (index - 1 + track.children.length) % track.children.length;
+    updateCarousel();
   };
 
-  function startAutoSlide() {
-    stopAutoSlide();
-    if (!track) return;
-
-    // Solo auto-slide en mobile
+  function startAuto() {
     if (!isMobile()) return;
-
-    timerId = window.setInterval(() => {
-      window.nextSlide();
-    }, 5000);
+    stopAuto();
+    timer = setInterval(window.nextSlide, 5000);
   }
 
-  function stopAutoSlide() {
-    if (timerId) {
-      clearInterval(timerId);
-      timerId = null;
-    }
+  function stopAuto() {
+    if (timer) clearInterval(timer);
   }
 
-  // Inicializa carrusel
-  window.updateCarousel();
-  startAutoSlide();
+  updateCarousel();
+  startAuto();
 
   window.addEventListener("resize", () => {
-    // Si cambia de tamaño, ajusta y reinicia el timer según sea mobile/desktop
-    window.updateCarousel();
-    startAutoSlide();
-
-    // También re-render del sistema 3 pasos
-    if (isMobile()) window.showStep(1);
-    else document.querySelectorAll(".step").forEach((el) => el.classList.remove("hidden"));
+    updateCarousel();
+    startAuto();
   });
 
-  /**
-   * =========================================
-   * 4) Ocultar banner "agenda_demo" cuando se ve el contacto
-   * =========================================
-   */
+  /* =========================
+   * 4) Ocultar banner agenda
+   * ========================= */
   const banner = document.getElementById("agenda_demo");
   const contacto = document.getElementById("contacto");
 
   if (banner && contacto && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          banner.classList.add("opacity-0", "pointer-events-none");
-        } else {
-          banner.classList.remove("opacity-0", "pointer-events-none");
-        }
+        banner.classList.toggle("opacity-0", entry.isIntersecting);
+        banner.classList.toggle("pointer-events-none", entry.isIntersecting);
       },
       { threshold: 0.2 }
     );
