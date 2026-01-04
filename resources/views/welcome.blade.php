@@ -7,6 +7,20 @@
 
         <title>{{ config('app.name', 'Hay Leads') }}</title>
         <!-- Styles / Scripts -->
+        <style>
+            .step-btn {
+                width: 40px;
+                height: 40px;
+                border-radius: 9999px;
+                background: #83d040;
+                color: black;
+                font-weight: bold;
+            }
+            .step-btn.active {
+                background: white;
+            }
+            </style>
+
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -22,6 +36,8 @@
                 <a href="#contacto" class="bg-[#83d040] w-46 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-sm md:text-md hover:scale-125">Agenda tu Demo</a>
             </nav>
         </header>
+
+        <!-- Seccion Principal -->
         <main class="w-full flex flex-col items-center justify-center">
             <div class="flex flex-col md:flex-row gap-4 items-center justify-center w-full md:max-w-10/12 pl-4">
                 <div class="w-10/12 flex flex-col items-center justify-center gap-4 lg:gap-8">
@@ -40,6 +56,8 @@
                 </a>
             </div>
         </main>
+
+        <!-- Seccion Ventas -->
         <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center mt-12 py-12">
             <div class="w-full mb-4">
                 <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#9795fa]">No necesitas más volumen. <br> Necesitas Leads que puedan comprar.</h2>
@@ -47,80 +65,217 @@
             <div class="w-full flex justify-center mb-8">
                 <p class="text-center text-sm md:text-xl lg:text-2xl w-12/12 px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
             </div>
-            <div class="flex flex-col md:flex-row w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48">
-                <div class="col-md-6 flex items-start gap-4">
-                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</p>
+            <div class="flex w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48">
+                <div
+                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
+                    onclick="toggleItem(this)"
+                >
+                    <img 
+                        src="{{ asset('img/vineta.svg') }}" 
+                        alt="Proceso Hay Leads" 
+                        class="w-1/12 rounded-3xl">
+                    <p class="text-sm md:text-xl lg:text-2xl">
+                        <span class="md:hidden font-semibold">Campañas</span>
+                        <span class="hidden md:inline">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</span>
+                        <span class="mobile-content hidden">en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</span>
+                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
+                            (ver más)
+                        </span>
+                    </p>
                 </div>
-                <div class="col-md-6 flex items-start gap-4">
-                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto</p>
+                <div
+                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
+                    onclick="toggleItem(this)"
+                >
+                    <img 
+                        src="{{ asset('img/vineta.svg') }}" 
+                        alt="Proceso Hay Leads" 
+                        class="w-1/12 rounded-3xl">
+                    <p class="text-sm md:text-xl lg:text-2xl">
+                        <span class="md:hidden font-semibold">Optimización</span>
+                        <span class="hidden md:inline">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto.</span>
+                        <span class="mobile-content hidden">continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto.</span>
+                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
+                            (ver más)
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48 mt-8">
                 <div class="col-md-6 flex items-start gap-4">
-                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</p>
+                    <div
+                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
+                    onclick="toggleItem(this)"
+                >
+                    <img 
+                        src="{{ asset('img/vineta.svg') }}" 
+                        alt="Proceso Hay Leads" 
+                        class="w-1/12 rounded-3xl">
+                    <p class="text-sm md:text-xl lg:text-2xl">
+                        <span class="md:hidden font-semibold">Filtros</span>
+                        <span class="hidden md:inline">Filtros y nurturing de leads con apoyo de IA para diferenciar  curiosos de los  potenciales compradores.</span>
+                        <span class="mobile-content hidden">y nurturing de leads con apoyo de IA para diferenciar  curiosos de los  potenciales compradores.</span>
+                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
+                            (ver más)
+                        </span>
+                    </p>
                 </div>
                 <div class="col-md-6 flex items-start gap-4">
-                    <img src="{{ asset('img/vineta.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto</p>
+                    <div
+                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
+                    onclick="toggleItem(this)"
+                >
+                    <img 
+                        src="{{ asset('img/vineta.svg') }}" 
+                        alt="Proceso Hay Leads" 
+                        class="w-1/12 rounded-3xl">
+                    <p class="text-sm md:text-xl lg:text-2xl">
+                        <span class="md:hidden font-semibold">Inversión</span>
+                        <span class="hidden md:inline">Inversión enfocada en generar y medir tu retorno de la inversión. No medimos clics o interacciones.</span>
+                        <span class="mobile-content hidden">enfocada en generar y medir tu retorno de la inversión. No medimos clics o interacciones.</span>
+                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
+                            (ver más)
+                        </span>
+                    </p>
                 </div>
             </div>
         </section>
+        <!-- Seccion Inversion -->
         <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center py-12">
             <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">Transforma tu inversión publicitaria en Ventas</h2>
             <p class="text-center text-sm md:text-xl lg:text-2xl w-12/12 px-4 mt-4">Nuestro enfoque prioriza los prospectos con intención de compra real, seguimiento claro y decisiones basadas en datos.</p>
-            <div class="w-11/12 mx-auto mt-20 flex flex-col gap-20 md:flex-row justify-between items-center">
-                <div class="bg-[#9795fa] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
-                    <img src="{{ asset('img/etiqueta1.svg') }}" alt="Etiqueta Más Calidad" class="w-40 h-40 absolute -right-16 -top-20 rotate-36">
-                    <h6 class="font-black text-lg">Más Calidad</h6>
-                    <p class="text-sm md:text-xl lg:text-2xl">Seguimos cada lead desde el primer click hasta la venta. 
-                        <br>
-                        <br>
-                    Si no puede comprar no entra al funnel</p>
+            <div class="w-11/12 mx-auto mt-20 relative">
+                
+                <!-- TRACK -->
+                <div
+                    id="carouselTrack"
+                    class="flex transition-transform duration-500 ease-in-out md:flex-row md:translate-x-0"
+                >
+
+                    <!-- ITEM 1 Mas Calidad-->
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
+                        <div class="relative w-10/12 flex justify-center">
+
+                            <!-- CARD -->
+                            <div class="bg-[#9795fa] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
+                            <h6 class="font-black text-lg">Más Calidad</h6>
+                            <p class="text-sm md:text-xl lg:text-2xl">
+                                Seguimos cada lead desde el primer click hasta la venta.
+                                <br><br>
+                                Si no puede comprar no entra al funnel
+                            </p>
+                            </div>
+
+                            <!-- IMAGEN -->
+                            <img
+                            src="{{ asset('img/etiqueta1.svg') }}"
+                            class="absolute w-40 h-40 -right-16 -top-20 rotate-36 z-20 pointer-events-none"
+                            alt="Más Calidad"
+                            />
+
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 Mas Control-->
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
+                        <div class="relative w-10/12 flex justify-center">
+
+                            <!-- CARD -->
+                            <div class="bg-[#83d040] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
+                                <h6 class="font-black text-lg">Más Control</h6>
+                                <p class="text-sm md:text-xl lg:text-2xl">
+                                    Dashboards claros con lo que te importa:
+                                    <br><br>
+                                    Leads, citas, cierres y retorno de la inversión
+                                </p>
+                            </div>
+
+                            <!-- IMAGEN -->
+                            <img
+                                src="{{ asset('img/etiqueta2.svg') }}"
+                                class="absolute w-64 h-64 -right-24 -top-32 rotate-36 z-20 pointer-events-none"
+                                alt="Más Control"
+                            />
+
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 MAs Ventas-->
+                    <div class="min-w-full md:min-w-0 md:w-1/3 flex justify-center">
+                        <div class="relative w-10/12 flex justify-center">
+
+                            <!-- CARD -->
+                            <div class="bg-[#9795fa] w-full p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative z-10">
+                                <h6 class="font-black text-lg">Más Ventas</h6>
+                                <p class="text-sm md:text-xl lg:text-2xl">
+                                    Trabajamos de la mano con tu equipo de ventas para optimizar:
+                                    <br><br>
+                                    Mensajes, tiempo de respuesta y seguimiento en tiempo real
+                                </p>
+                            </div>
+
+                            <!-- IMAGEN -->
+                            <img
+                                src="{{ asset('img/etiqueta3.svg') }}"
+                                class="absolute w-60 h-60 -right-30 -top-30 rotate-36 z-20 pointer-events-none"
+                                alt="Más Ventas"
+                            />
+
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-[#83d040] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
-                    <img src="{{ asset('img/etiqueta2.svg') }}" alt="Etiqueta Más Control" class="w-64 h-64 absolute -right-30 -top-36 md:-right-15 rotate-36 lg:-right-23">
-                    <h6 class="font-black text-lg">Más Control</h6>
-                    <p class="text-sm md:text-xl lg:text-2xl">Dashboards claros con lo que te importa:
-                        <br>
-                        <br>
-                    Leads, citas, cierres y retorno de la inversión</p>
-                </div>
-                <div class="bg-[#9795fa] w-10/12 md:w-10/12 p-4 flex flex-col items-center text-center gap-8 rounded-2xl relative">
-                    <img src="{{ asset('img/etiqueta3.svg') }}" alt="Etiqueta Más Ventas" class="w-30 h-30 md:w-60 md:h-60 absolute -right-20 -top-20 md:-right-15 md:-top-30 lg:-right-25 rotate-36">
-                    <h6 class="font-black text-lg">Más Ventas</h6>
-                    <p class="text-sm md:text-xl lg:text-2xl">Trabajamos de la mano con tu equipo de ventas para optimizar:
-                        <br>
-                        <br>
-                    Mensajes, tiempo de respuesta y seguimiento en tiempo real</p>
+
+                <!-- CONTROLES (solo mobile) -->
+                <div class="flex justify-center gap-4 mt-6 md:hidden">
+                    <button onclick="prevSlide()" class="w-8 h-8 bg-[#83d040] text-white font-bold rounded-full opacity-50"><</button>
+                    <button onclick="nextSlide()" class="w-8 h-8 bg-[#83d040] text-white font-bold rounded-full opacity-50">></button>
                 </div>
             </div>
         </section>
+        <!-- Seccion 3 pasos -->
         <section class="w-full px-4 flex md:flex-row items-center gap-8 lg:gap-0 justify-center py-12">
             <div class="w-7/12 flex justify-center items-center flex-col">
-                <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">Nuestro sistema en 3 pasos</h2>
-                <div class="flex items-start gap-4 mt-8">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-md lg:text-lg font-light w-full text-white"> <span class="md:text-xl lg:text-2xl font-bold"> Atraemos compradores con capacidad</span>
-                        <br>
-                    Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos. </p>
+                <!-- TÍTULO -->
+                <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">
+                    Nuestro sistema en 3 pasos
+                </h2>
+
+                <!-- NUMERACIÓN (SOLO MOBILE) -->
+                <div class="flex gap-4 mt-6 md:hidden">
+                    <button onclick="showStep(1)" class="step-btn">1</button>
+                    <button onclick="showStep(2)" class="step-btn">2</button>
+                    <button onclick="showStep(3)" class="step-btn">3</button>
                 </div>
-                <div class="flex items-start gap-4 mt-8">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full text-white font-light"> <span class="md:text-xl lg:text-2xl font-bold">Cualificamos y filtramos con IA</span>
-                        <br>
-                    Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios. </p>
+
+                <!-- PASO 1 -->
+                <div class="step mt-8 hidden md:flex" data-step="1">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
+                    <p class="text-white font-light">
+                    <span class="font-bold text-xl">Atraemos compradores con capacidad</span><br>
+                    Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos.
+                    </p>
                 </div>
-                <div class="flex items-start gap-4 mt-8">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" alt="Proceso Hay Leads" class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl w-full text-white font-light"><span class="md:text-xl lg:text-2xl font-bold">Medimos, optimizamos y escalamos </span>
-                        <br>
-                    Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más. </p>
+
+                <!-- PASO 2 -->
+                <div class="step mt-8 hidden md:flex" data-step="2">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
+                    <p class="text-white font-light">
+                    <span class="font-bold text-xl">Cualificamos y filtramos con IA</span><br>
+                    Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios.
+                    </p>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="step mt-8 hidden md:flex" data-step="3">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
+                    <p class="text-white font-light">
+                    <span class="font-bold text-xl">Medimos, optimizamos y escalamos</span><br>
+                    Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más.
+                    </p>
                 </div>
             </div>
-            <div class="w-3/12 grid grid-rows-4 grid-cols-3">
+
+            <div class="w-3/12 md:grid-rows-4 md:grid-cols-3 hidden md:grid">
                 <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Ads</h6>
                 <div></div>
                 <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Leads Calificados</h6>
@@ -135,97 +290,102 @@
                 <img src="{{ asset('img/ventas.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
             </div>
         </section>
-        <section id="contacto" class="w-10/12 mx-auto flex flex-col items-center gap-8 lg:gap-0 justify-center mb-12">
-            <div class="">
-                <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">Si tus ventas dependen de leads, dependen de nosotros</h2>
-                <p class="text-white text-center text-sm md:text-xl lg:text-2xl mt-12 w-full mx-auto">Descubre cómo llenar tu pipeline con citas reales, reducir el desgaste de tu equipo de ventas y empezar a cerrar más con una estrategia digital integral</p>
-                <p class="text-white text-center text-sm md:text-xl lg:text-2xl mt-14 w-full mx-auto">Déjanos tus datos y comienza a vender más</p>
-            </div>
-            {{-- <form action="" class="flex flex-col gap-4 p-10 w-10/12 mx-auto my-8">
-                @csrf
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-      
-                    <!-- Nombre -->
-                    <div>
-                        <label for="name" class="block text-sm -mb-2 text-white">Nombre</label>
-                        <input
-                        name="name"
-                        id="name"
-                        type="text"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
-                        />
-                    </div>
+        <section
+  id="contacto"
+  class="w-10/12 mx-auto flex flex-col items-center gap-12 mb-12 min-h-screen"
+>
+  <!-- TEXTO -->
+  <div class="max-w-5xl">
+    <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl text-[#83d040]">
+      Si tus ventas dependen de leads, dependen de nosotros
+    </h2>
 
-                    <!-- Teléfono -->
-                    <div>
-                        <label for="telephone" class="block text-sm -mb-2 text-white">Teléfono</label>
-                        <input
-                        name="telephone"
-                        id="telephone"
-                        type="tel"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
-                        />
-                    </div>
+    <p class="text-white text-center text-sm md:text-xl lg:text-2xl mt-12">
+      Descubre cómo llenar tu pipeline con citas reales, reducir el desgaste de tu equipo de ventas y empezar a cerrar más con una estrategia digital integral
+    </p>
 
-                    <!-- Correo -->
-                    <div>
-                        <label label="mail" class="block text-sm -mb-2 text-white">Correo</label>
-                        <input
-                        name="mail"
-                        id="mail"
-                        type="email"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
-                        />
-                    </div>
+    <p class="text-white text-center text-sm md:text-xl lg:text-2xl mt-14">
+      Déjanos tus datos y comienza a vender más
+    </p>
+  </div>
 
-                    <!-- Tipo de proyecto -->
-                    <div>
-                        <label for="project_type" class="block text-sm -mb-2 text-white">Tipo de proyecto</label>
-                        <input
-                        name="project_type"
-                        id="project_type"
-                        type="text"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] py-1 text-white"
-                        />
-                    </div>
+  <!-- FORM -->
+  <div class="w-full flex justify-center">
+    <iframe
+      class="w-full min-h-[650px] lg:min-h-[800px] border-none"
+      src="https://api.leadconnectorhq.com/widget/form/wjx6D6c2C7d1h3UanacQ"
+      id="inline-wjx6D6c2C7d1h3UanacQ"
+      title="Hay Leads"
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
 
-                    <!-- Comentarios (full width) -->
-                    <div class="md:col-span-2">
-                        <label for="comments" class="block text-sm -mb-2 text-white">Comentarios</label>
-                        <textarea
-                        name="comments"
-                        id="comments"
-                        rows="2"
-                        class="w-full bg-transparent border-b border-white focus:outline-none focus:border-[#83d040] resize-none py-1 text-white"
-                        ></textarea>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center w-full mt-4">
-                    <input type="submit" class="bg-[#83d040] w-56 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-lg hover:cursor-pointer hover:scale-125" value="Agenda tu Demo"/>
-                </div>
-            </form> --}}
-            <div class="w-ful flex bg-black text-white text-center p-4">
-            <iframe
-                class="w-full min-h-146.25"
-                src="https://api.leadconnectorhq.com/widget/form/wjx6D6c2C7d1h3UanacQ"
-                {{-- style="width:100%;height:100%;border:none;border-radius:3px" --}}
-                id="inline-wjx6D6c2C7d1h3UanacQ" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Hay Leads"
-                data-height="585"
-                data-layout-iframe-id="inline-wjx6D6c2C7d1h3UanacQ"
-                data-form-id="wjx6D6c2C7d1h3UanacQ"
-                title="Hay Leads"
-            >
-    </iframe>
-        </section>
-        </div>
+<script>
+    function showStep(step) {
+        if (window.innerWidth >= 768) return;
+
+        document.querySelectorAll('.step').forEach(el => {
+            el.classList.add('hidden');
+        });
+
+        document.querySelectorAll('.step-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        document.querySelector(`.step[data-step="${step}"]`)?.classList.remove('hidden');
+        document.querySelectorAll('.step-btn')[step - 1]?.classList.add('active');
+    }
+
+    // Mostrar el paso 1 por defecto en mobile
+    if (window.innerWidth < 768) {
+        showStep(1);
+    }
+</script>
+
+<script>
+  const track = document.getElementById('carouselTrack');
+  const slides = track.children.length;
+  let index = 0;
+
+  function updateCarousel() {
+    if (window.innerWidth >= 768) {
+      track.style.transform = 'translateX(0)';
+      return;
+    }
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides) % slides;
+    updateCarousel();
+  }
+
+  // Auto slide
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+
+  window.addEventListener('resize', updateCarousel);
+</script>
+
+
+<script>
+    function toggleItem(element) {
+        if (window.innerWidth >= 768) return;
+
+        const content = element.querySelector('.mobile-content');
+        if (content) {
+            content.classList.toggle('hidden');
+        }
+    }
+</script>
+
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
