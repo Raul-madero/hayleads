@@ -322,6 +322,7 @@
 </section>
 
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
     function showStep(step) {
         if (window.innerWidth >= 768) return;
 
@@ -341,9 +342,11 @@
     if (window.innerWidth < 768) {
         showStep(1);
     }
+});
 </script>
 
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carouselTrack');
   const slides = track.children.length;
   let index = 0;
@@ -372,10 +375,12 @@
   }, 5000);
 
   window.addEventListener('resize', updateCarousel);
+});
 </script>
 
 
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
     function toggleItem(element) {
         if (window.innerWidth >= 768) return;
 
@@ -384,6 +389,7 @@
             content.classList.toggle('hidden');
         }
     }
+})
 </script>
 
 
