@@ -323,7 +323,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    function showStep(step) {
+    window.showStep = function (step) {
         if (window.innerWidth >= 768) return;
 
         document.querySelectorAll('.step').forEach(el => {
@@ -351,7 +351,7 @@
   const slides = track.children.length;
   let index = 0;
 
-  function updateCarousel() {
+  window.updateCarousel = function () {
     if (window.innerWidth >= 768) {
       track.style.transform = 'translateX(0)';
       return;
@@ -359,12 +359,12 @@
     track.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  function nextSlide() {
+  window.nextSlide = function () {
     index = (index + 1) % slides;
     updateCarousel();
   }
 
-  function prevSlide() {
+  window.prevSlide = function () {
     index = (index - 1 + slides) % slides;
     updateCarousel();
   }
@@ -381,7 +381,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-    function toggleItem(element) {
+     window.toggleItem = function (element) {
         if (window.innerWidth >= 768) return;
 
         const content = element.querySelector('.mobile-content');
