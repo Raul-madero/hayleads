@@ -47,7 +47,7 @@
                     Nos enfocamos en alcanzar tus objetivos de ventas y no en generar más leads</p>
                 </div>
                 <div class="text-center w-full flex justify-center items-center">
-                    <img src="{{ asset('img/hero.png') }}" class="w-full h-40 md:h-full lg:w-90 rounded-3xl" alt="Sistemas Computacionales Hay Leads">
+                    <img src="{{ asset('img/hero.png') }}" class="w-full max-w-60 mx-auto h-40 md:h-full lg:w-90 rounded-3xl" alt="Sistemas Computacionales Hay Leads">
                 </div>
             </div>
             <div id="agenda_demo" class="fixed bottom-0 left-0 w-full bg-[#83d040] h-12 flex items-center justify-center z-50 hover:cursor-pointer hover:scale-125">
