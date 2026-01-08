@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       bulletContents.forEach(c => {
         c.classList.remove("show");
-        setTimeout(() => c.classList.add("hidden"), 3000);
+        setTimeout(() => c.classList.add("hidden"), 30000);
       });
 
       target.classList.remove("hidden");
