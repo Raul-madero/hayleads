@@ -19,6 +19,19 @@
             .step-btn.active {
                 background: white;
             }
+            .bullet-title {
+                @apply flex items-center gap-4 text-left text-base font-semibold cursor-pointer;
+            }
+
+            .bullet-content {
+                @apply absolute top-0 left-0 w-full text-sm
+                    opacity-0 translate-x-6
+                    transition-all duration-300;
+            }
+
+            .bullet-content.show {
+                @apply opacity-100 translate-x-0;
+            }
             </style>
 
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -65,79 +78,85 @@
             <div class="w-full flex justify-center mb-8">
                 <p class="text-center text-sm md:text-xl lg:text-2xl w-full px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
             </div>
-            <div class="flex w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48">
-                <div
-                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
-                    onclick="toggleItem(this)"
-                >
-                    <img 
-                        src="{{ asset('img/vineta.svg') }}" 
-                        alt="Proceso Hay Leads" 
-                        class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl">
-                        <span class="md:hidden font-semibold">Campañas</span>
-                        <span class="hidden md:inline">Campañas en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</span>
-                        <span class="mobile-content hidden">en canales digitales (Google, Meta, LinkedIn. TikTok) Enfocadas en intención real.</span>
-                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
-                            (ver más)
-                        </span>
-                    </p>
+            <div class="w-full px-6 md:px-12 lg:px-48">
+                <!-- ===== MOBILE ===== -->
+                <div class="flex gap-4 items-center justify-center md:hidden">
+                    <div class="flex flex-col items-center justify-center gap-4">
+                        <div class="flex items-center justify-center gap-4">
+                            <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                            <button class="bullet-title" data-content="campanas">
+                                <span class="font-extrabold">Campañas </span>
+                                {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
+                            </button>
+                            <div id="campanas" class="bullet-content hidden">
+                                en canales digitales (Google, Meta, LinkedIn, TikTok) enfocadas en intención real.
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center gap-4">
+                            <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                            <button class="bullet-title" data-content="filtros">
+                                <span class="font-extrabold">Filtros </span>
+                                {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
+                            </button>
+                            <div id="filtros" class="bullet-content hidden">
+                                y nurturing de leads con apoyo de IA para diferenciar curiosos de compradores.
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-4">
+                            <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                            <button class="bullet-title" data-content="optimizacion">
+                                <span class="font-extrabold">Optimización </span>
+                                {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
+                            </button>
+                            <div id="optimizacion" class="bullet-content hidden">
+                                continua junto al equipo de ventas para alinear resultados y alcanzar metas.
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-4">
+                            <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                            <button class="bullet-title" data-content="inversion">
+                                <span class="font-extrabold">Inversión </span>
+                                {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
+                            </button>
+                            <div id="inversion" class="bullet-content hidden">
+                                enfocada en generar y medir tu retorno de inversión. No medimos clics.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
-                    onclick="toggleItem(this)"
-                >
-                    <img 
-                        src="{{ asset('img/vineta.svg') }}" 
-                        alt="Proceso Hay Leads" 
-                        class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl">
-                        <span class="md:hidden font-semibold">Optimización</span>
-                        <span class="hidden md:inline">Optimización continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto.</span>
-                        <span class="mobile-content hidden">continua junto al equipo de ventas para alinear resultados y alcanzar metas en conjunto.</span>
-                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
-                            (ver más)
-                        </span>
-                    </p>
+
+                <!-- ===== DESKTOP ===== -->
+                <div class="hidden md:grid md:grid-cols-2 gap-8">
+
+                    <div class="flex gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                    <p><strong>Campañas</strong> en canales digitales (Google, Meta, LinkedIn, TikTok) enfocadas en intención real.</p>
+                    </div>
+
+                    <div class="flex gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                    <p><strong>Optimización</strong> continua junto al equipo de ventas para alinear resultados y alcanzar metas.</p>
+                    </div>
+
+                    <div class="flex gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                    <p><strong>Filtros</strong> y nurturing de leads con apoyo de IA para diferenciar curiosos de compradores.</p>
+                    </div>
+
+                    <div class="flex gap-4">
+                    <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
+                    <p><strong>Inversión</strong> enfocada en generar y medir tu retorno de inversión. No medimos clics.</p>
+                    </div>
+
                 </div>
-            </div>
-            <div class="flex flex-col md:flex-row w-full gap-12 justify-center items-center px-8 md:px-12 lg:px-48 mt-8">
-                <div class="col-md-6 flex items-start gap-4">
-                    <div
-                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
-                    onclick="toggleItem(this)"
-                >
-                    <img 
-                        src="{{ asset('img/vineta.svg') }}" 
-                        alt="Proceso Hay Leads" 
-                        class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl">
-                        <span class="md:hidden font-semibold">Filtros</span>
-                        <span class="hidden md:inline">Filtros y nurturing de leads con apoyo de IA para diferenciar  curiosos de los  potenciales compradores.</span>
-                        <span class="mobile-content hidden">y nurturing de leads con apoyo de IA para diferenciar  curiosos de los  potenciales compradores.</span>
-                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
-                            (ver más)
-                        </span>
-                    </p>
                 </div>
-                <div class="col-md-6 flex items-start gap-4">
-                    <div
-                    class="flex items-start gap-4 cursor-pointer md:cursor-default"
-                    onclick="toggleItem(this)"
-                >
-                    <img 
-                        src="{{ asset('img/vineta.svg') }}" 
-                        alt="Proceso Hay Leads" 
-                        class="w-1/12 rounded-3xl">
-                    <p class="text-sm md:text-xl lg:text-2xl">
-                        <span class="md:hidden font-semibold">Inversión</span>
-                        <span class="hidden md:inline">Inversión enfocada en generar y medir tu retorno de la inversión. No medimos clics o interacciones.</span>
-                        <span class="mobile-content hidden">enfocada en generar y medir tu retorno de la inversión. No medimos clics o interacciones.</span>
-                        <span class="md:hidden text-[#83d040] ml-1 text-xs">
-                            (ver más)
-                        </span>
-                    </p>
-                </div>
+
+            <div class="w-full flex justify-center mt-8">
+                <p class="text-center text-sm md:text-xl lg:text-2xl w-full px-2">El resultado es simple:
+                <br>Ventas cerradas en los primeros 3 meses de trabajo para el 90% de nuestros clientes. 
+                </p>
             </div>
         </section>
         <!-- Seccion Inversion -->
@@ -234,44 +253,46 @@
         </section>
         <!-- Seccion 3 pasos -->
         <section class="w-full px-4 flex md:flex-row items-center gap-8 lg:gap-0 justify-center py-12">
-            <div class="w-full flex justify-center items-center flex-col">
+            <div class="w-full flex flex-col">
                 <!-- TÍTULO -->
                 <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#83d040]">
                     Nuestro sistema en 3 pasos
                 </h2>
 
                 <!-- NUMERACIÓN (SOLO MOBILE) -->
-                <div class="flex gap-4 mt-6 md:hidden">
-                    <button onclick="showStep(1)" class="step-btn">1</button>
-                    <button onclick="showStep(2)" class="step-btn">2</button>
-                    <button onclick="showStep(3)" class="step-btn">3</button>
-                </div>
+                <div class="flex items-center justify-between md:flex-col w-full gap-10">
+                    <div class="flex flex-col justify-start items-start gap-4 mt-6 md:hidden">
+                        <button onclick="showStep(1)" class="step-btn">1</button>
+                        <button onclick="showStep(2)" class="step-btn">2</button>
+                        <button onclick="showStep(3)" class="step-btn">3</button>
+                    </div>
 
-                <!-- PASO 1 -->
-                <div class="step mt-8 hidden md:flex" data-step="1">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
-                    <p class="text-white font-light">
-                    <span class="font-bold text-xl">Atraemos compradores con capacidad</span><br>
-                    Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos.
-                    </p>
-                </div>
+                    <!-- PASO 1 -->
+                    <div class="step mt-8 hidden md:flex" data-step="1">
+                        <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                        <p class="text-white font-light">
+                        <span class="font-bold text-xl">Atraemos compradores con capacidad</span><br>
+                        Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos.
+                        </p>
+                    </div>
 
-                <!-- PASO 2 -->
-                <div class="step mt-8 hidden md:flex" data-step="2">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
-                    <p class="text-white font-light">
-                    <span class="font-bold text-xl">Cualificamos y filtramos con IA</span><br>
-                    Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios.
-                    </p>
-                </div>
+                    <!-- PASO 2 -->
+                    <div class="step mt-8 hidden md:flex" data-step="2">
+                        <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                        <p class="text-white font-light">
+                        <span class="font-bold text-xl">Cualificamos y filtramos con IA</span><br>
+                        Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios.
+                        </p>
+                    </div>
 
-                <!-- PASO 3 -->
-                <div class="step mt-8 hidden md:flex" data-step="3">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4">
-                    <p class="text-white font-light">
-                    <span class="font-bold text-xl">Medimos, optimizamos y escalamos</span><br>
-                    Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más.
-                    </p>
+                    <!-- PASO 3 -->
+                    <div class="step mt-8 hidden md:flex" data-step="3">
+                        <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                        <p class="text-white font-light">
+                        <span class="font-bold text-xl">Medimos, optimizamos y escalamos</span><br>
+                        Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más.
+                        </p>
+                    </div>
                 </div>
             </div>
 

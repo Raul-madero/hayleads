@@ -4,15 +4,24 @@ function isMobile() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
-   * 1) Toggle viñetas (mobile)
-   * ========================= */
-  window.toggleItem = function (element) {
-    if (!isMobile()) return;
+  const bulletButtons = document.querySelectorAll(".bullet-title");
+  const bulletContents = document.querySelectorAll(".bullet-content");
 
-    const content = element.querySelector(".mobile-content");
-    if (content) content.classList.toggle("hidden");
-  };
+  bulletButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (window.innerWidth >= 768) return;
+
+      const target = document.getElementById(btn.dataset.content);
+
+      bulletContents.forEach(c => {
+        c.classList.remove("show");
+        setTimeout(() => c.classList.add("hidden"), 3000);
+      });
+
+      target.classList.remove("hidden");
+      requestAnimationFrame(() => target.classList.add("show"));
+    });
+  });
 
   /* =========================
    * 2) Sistema 3 pasos
