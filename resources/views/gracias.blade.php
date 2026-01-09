@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <section class="w-full min-h-screen flex items-center justify-center px-6 py-16">
+    <section class="w-full flex items-center justify-center px-6">
         <div class="w-full max-w-2xl text-center">
             <h1 class="text-xl md:text-2xl lg:text-4xl text-[#83d040] font-extrabold">
             ¡Gracias por dejarnos tus datos! 🎉
@@ -33,7 +33,7 @@
             </p>
         </div>
     </section>
-    <a href="{{ url('/') }}" class="bg-[#83d040] w-46 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-sm md:text-md hover:scale-125">
+    <a href="{{ url('/') }}" class="bg-[#83d040] w-46 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-sm md:text-md hover:scale-125 mt-4">
         Volver al Inicio
     </a>
 @endsection
