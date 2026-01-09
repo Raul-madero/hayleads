@@ -104,4 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(contacto);
   }
+
+  /* =========================
+   * 5) Listener del iframe
+   * ========================= */
+  window.addEventListener("message", (event) => {
+    if (typeof event.data === "string" && event.data.includes("form_submit")) {
+      window.location.href = "gracias";
+    }
+  })
 });

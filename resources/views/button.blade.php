@@ -1,0 +1,1 @@
+<a href="#contacto" class="bg-[#83d040] w-46 text-center font-black uppercase p-4 rounded-4xl lg:rounded-full text-sm md:text-md hover:scale-125">Agenda tu Demo</a>
