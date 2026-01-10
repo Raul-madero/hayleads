@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('agradecimiento.layout_gracias')
 
-@section('content')
-    <section class="w-full flex items-center justify-center px-6">
+@section('main')
+    <section class="w-full flex  items-center justify-center px-6">
         <div class="w-full max-w-2xl text-center">
             <h1 class="text-xl md:text-2xl lg:text-4xl text-[#83d040] font-extrabold">
             ¡Gracias por dejarnos tus datos! 🎉

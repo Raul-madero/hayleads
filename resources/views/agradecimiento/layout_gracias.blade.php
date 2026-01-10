@@ -46,26 +46,5 @@
         <main class="w-full flex flex-col items-center justify-center">
             @yield('main')
         </main>
-
-        <!-- Seccion Ventas -->
-        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center mt-12 py-12">
-            @yield('ventas')
-        </section>
-        <!-- Seccion Inversion -->
-        <section class="w-full bg-[#d9d9d9] flex flex-col items-center gap-8 lg:gap-0 justify-center py-12 overflow-x-hidden">
-            @yield('inversion')
-        </section>
-
-        <!-- Seccion 3 pasos -->
-        <section class="w-full px-4 flex md:flex-row items-center gap-8 lg:gap-0 justify-center py-12">
-            @yield('3pasos')
-        </section>
-        <!-- Seccion Contacto -->
-        <section
-        id="contacto"
-        class="w-full mx-auto flex flex-col items-center gap-12 mb-12 min-h-screen"
-        >
-            @yield('contacto')
-        </section>
     </body>
 </html>
