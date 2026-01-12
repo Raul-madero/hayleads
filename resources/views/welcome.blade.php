@@ -25,7 +25,7 @@
             <h2 class="font-black text-center text-lg md:text-2xl lg:text-3xl w-full text-[#9795fa]">No necesitas más volumen. <br> Necesitas Leads que puedan comprar.</h2>
         </div>
         <div class="w-full flex justify-center mb-8">
-            <p class="text-center text-sm md:text-xl lg:text-2xl w-full px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
+            <p class="text-center text-sm md:text-xl lg:text-2xl w-full md:w-7/12 mx-auto px-2">Con más de 8 años de experiencia en marketing digital inmobiliario, hemos ayudado a más de 50 desarrollos a generar un volumen constante de citas calificadas al mes. Implementamos un proceso simple y sencillo que funciona</p>
         </div>
         <div class="w-full px-6 md:px-12 lg:px-48">
             <!-- ===== MOBILE ===== -->
@@ -216,7 +216,7 @@
 
                 <!-- PASO 1 -->
                 <div class="step mt-8 hidden md:flex" data-step="1">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:flex">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Atraemos compradores con capacidad</span><br>
                     Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos.
@@ -225,7 +225,7 @@
 
                 <!-- PASO 2 -->
                 <div class="step mt-8 hidden md:flex" data-step="2">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:flex">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Cualificamos y filtramos con IA</span><br>
                     Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios.
@@ -234,7 +234,7 @@
 
                 <!-- PASO 3 -->
                 <div class="step mt-8 hidden md:flex" data-step="3">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:flex">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Medimos, optimizamos y escalamos</span><br>
                     Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más.
@@ -244,18 +244,18 @@
         </div>
 
         <div class="w-full md:grid-rows-4 md:grid-cols-3 hidden md:grid">
-            <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Ads</h6>
+            <h6 class="font-black text-[#83d040] justify-self-end self-end text-xs md:text-md lg:text-lg  text-end">Ads</h6>
             <div></div>
-            <h6 class="font-black text-[#83d040] justify-self-center self-end text-xs md:text-md lg:text-lg  text-center">Leads Calificados</h6>
+            <h6 class="font-black text-[#83d040] justify-self-start self-end text-xs md:text-md lg:text-lg  text-start">Leads Calificados</h6>
             <img src="{{ asset('img/ads.svg') }}" alt="Ads Hay Leads" class="w-30 h-30 justify-self-end self-center">
             <img src="{{ asset('img/flecha.svg') }}" alt="Flecha a la derecha" class="w-10 h-10 self-center justify-self-start">
-            <img src="{{ asset('img/leads.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
-            <h6 class="font-black text-[#83d040] justify-self-center self-end md:text-md lg:text-lg  text-xs text-center">Citas</h6>
+            <img src="{{ asset('img/leads.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30 justify-self-start self-center">
+            <h6 class="font-black text-[#83d040] justify-self-end self-end md:text-md lg:text-lg  text-xs text-center">Citas</h6>
             <div></div>
-            <h6 class="font-black text-[#83d040] justify-self-center self-end md:text-md lg:text-lg text-xs  text-center">Ventas</h6>
+            <h6 class="font-black text-[#83d040] justify-self-start self-end md:text-md lg:text-lg text-xs  text-center">Ventas</h6>
             <img src="{{ asset('img/citas.svg') }}" alt="Flecha a la derecha" class="w-30 h-30 self-center justify-self-end">
             <img src="{{ asset('img/flecha.svg') }}" alt="Leads Calificados Hay Leads" class="w-10 h-10 self-center justify-self-start">
-            <img src="{{ asset('img/ventas.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30">
+            <img src="{{ asset('img/ventas.svg') }}" alt="Leads Calificados Hay Leads" class="w-30 h-30 justify-self-start self-center">
         </div>
     @endsection
     @section('contacto')

@@ -24,7 +24,7 @@
                 </ul>
             </div>
 
-            <p class="mt-8 text-gray-200 md:text-lg text-sm md:text-xl lg:text-2xl">
+            <p class="mt-8 text-gray-200 text-sm md:text-xl lg:text-2xl">
             Estamos listos para ayudarte a escalar tu captación de clientes 🚀
             </p>
 
