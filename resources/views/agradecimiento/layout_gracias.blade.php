@@ -32,7 +32,8 @@
             .bullet-content.show {
                 @apply opacity-100 translate-x-0;
             }
-            </style> @vite(['resources/css/app.css', 'resources/js/app.js'])
+            </style> 
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="w-full bg-black dark:bg-[#0a0a0a] text-[#1b1b18] flex items-center min-h-screen flex-col pb-12">
         <header class="w-full text-sm not-has-[nav]:hidden pr-12">
