@@ -33,7 +33,7 @@
                 <div class="flex flex-col items-center justify-center gap-4">
                     <div class="flex items-center justify-center gap-4">
                         <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
-                        <button class="bullet-title" data-content="campanas">
+                        <button class="bullet-title hover:cursor-pointer" data-content="campanas">
                             <span class="font-extrabold">Campañas </span>
                             {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
                         </button>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="flex items-center justify-center gap-4">
                         <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
-                        <button class="bullet-title" data-content="filtros">
+                        <button class="bullet-title hover:cursor-pointer" data-content="filtros">
                             <span class="font-extrabold">Filtros </span>
                             {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
                         </button>
@@ -54,7 +54,7 @@
 
                     <div class="flex items-center justify-center gap-4">
                         <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
-                        <button class="bullet-title" data-content="optimizacion">
+                        <button class="bullet-title hover:cursor-pointer" data-content="optimizacion">
                             <span class="font-extrabold">Optimización </span>
                             {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
                         </button>
@@ -65,7 +65,7 @@
 
                     <div class="flex items-center justify-center gap-4">
                         <img src="{{ asset('img/vineta.svg') }}" alt="Vineta morada" class="w-6 h-6">
-                        <button class="bullet-title" data-content="inversion">
+                        <button class="bullet-title hover:cursor-pointer" data-content="inversion">
                             <span class="font-extrabold">Inversión </span>
                             {{-- <span class="text-xs font-bold text-[#83d040]">(Ver Mas)</span> --}}
                         </button>
@@ -209,14 +209,14 @@
             <!-- NUMERACIÓN (SOLO MOBILE) -->
             <div class="flex items-center justify-between md:flex-col w-full gap-10">
                 <div class="flex flex-col justify-start items-start gap-4 mt-6 md:hidden">
-                    <button onclick="showStep(1)" class="step-btn">1</button>
-                    <button onclick="showStep(2)" class="step-btn">2</button>
-                    <button onclick="showStep(3)" class="step-btn">3</button>
+                    <button onclick="showStep(1)" class="step-btn hover:cursor-pointer">1</button>
+                    <button onclick="showStep(2)" class="step-btn hover:cursor-pointer">2</button>
+                    <button onclick="showStep(3)" class="step-btn hover:cursor-pointer">3</button>
                 </div>
 
                 <!-- PASO 1 -->
                 <div class="step mt-8 hidden md:flex" data-step="1">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Atraemos compradores con capacidad</span><br>
                     Diseñamos campañas enfocadas en la intención y el perfil financiero, no en el volumen de contactos.
@@ -225,7 +225,7 @@
 
                 <!-- PASO 2 -->
                 <div class="step mt-8 hidden md:flex" data-step="2">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Cualificamos y filtramos con IA</span><br>
                     Automatizamos el primer contacto para que tu equipo solo hable con prospectos serios.
@@ -234,7 +234,7 @@
 
                 <!-- PASO 3 -->
                 <div class="step mt-8 hidden md:flex" data-step="3">
-                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2">
+                    <img src="{{ asset('img/vinetalogo.svg') }}" class="w-8 mr-4 mb-2 hidden md:block">
                     <p class="text-white font-light">
                     <span class="font-bold text-xl">Medimos, optimizamos y escalamos</span><br>
                     Seguimos cada lead hasta el cierre y optimizamos constantemente para que vendas más.
